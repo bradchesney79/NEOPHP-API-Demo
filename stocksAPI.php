@@ -1,5 +1,7 @@
 <?php
 
+include_once("dBug.php");
+
 $clean = array();
 $response = array();
 
@@ -34,10 +36,11 @@ $response = curl_exec($curlRequest);
 // close cURL resource, and free up system resources
 curl_close($curlRequest);
 
-var_dump(response);
 
-var_dump(json_decode($response,true));
+$phpObject = json_decode($response,true));
 
-echo json_last_error();
+
+new dBug($phpObject);
+
 
 ?>
